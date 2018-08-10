@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>blog</title>
+    </head>
+    <body>
+        <h1>{{ title }} is working</h1>
+        <h1>blog</h1>
+        {% for obj in list %}
+            </br>
+            {% if obj.content != "" %}
+                {{ obj.title|title }}</br>
+                {{ obj.content }}</br>
+                {{ obj.updated }}</br>
+                {{ obj.added }}</br>
+            {% else %}
+                {{ obj.title|title }}</br>
+                <b>{{ 'content coming soon'|capfirst|title }}</b></br>
+                {{ obj.updated }}</br>
+                {{ obj.added }}</br>
+                {% endif %}
+            {% endfor %}
+    </body>
+</html>

@@ -1,0 +1,7 @@
+.cross{
+    text-decoration: line-through;
+    font-style: italic;
+}
+span{
+    color: green;
+}

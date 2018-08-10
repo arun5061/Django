@@ -1,0 +1,8 @@
+body{
+    color: blue;
+    margin: 50px;
+}
+h2:hover{
+    color: green;
+    font-size: 50px;
+}

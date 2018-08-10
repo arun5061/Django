@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Registeration Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "art/style.css" %}" type="text/css">
+</head>
+<body>
+    <h2>****Student Registeration Form-Stu****</h2>
+    <h1>{{ name }}</h1>
+    <form action="/Users/kiran/Desktop/pytry/my_project/art/templates/Art/submit.html">
+    <div class="container">
+        Company:<input type="Text" name="comp" placeholder="Company Name" /><br />
+        <label for="fn">First Name:</label>
+        <input id="fn" type="Text" name="name" value="" pattern="[a-z]" title="Please enter Min 3 characters" required /><br />
+        <label for="ln">Last Name:</label>
+        <input id="ln" type="Text" name="name" value="" required /><br />
+        <label for="em">Email:</label>
+        <input id="em" type="email" name="p" placeholder="Email" required /><br />
+        <label for="pw">Password:</label>
+        <input id="pw" type="password" name="p" placeholder="password" required /><br />
+        <label for="m">Male</label>
+        <input id="m" type="radio" name="g" value="" required />
+        <label for="F">Female</label>
+        <input id="F" type="radio" name="g" value="" required /><br />
+        New to Registeration:<input type="checkbox" readonly /><br />
+        <select name="sub">
+            <option value="Hin">Hindi</option>
+            <option value="Tel">Telugu</option>
+            <option value="Eng">English</option>
+            <option value="San">Sanskrit</option>
+            <option value="Hindi"></option>
+        </select><br />
+        <ol>
+            {% for i in food %}
+            <li> {{ i }} </li>
+            {% endfor %}
+        </ol>
+        <h1> {{ date }} </h1>
+        <textarea name="feedback" rows="8" cols="80"></textarea>
+        <ol>
+            <li>Eng</li>
+            <li>Tel</li>
+            <li>Math</li>
+        </ol>
+        <input type="submit" name="s" value="Submit">
+        {% block head %}
+        {% endblock %}
+    </div>
+    </form>
+</body>
+</html>

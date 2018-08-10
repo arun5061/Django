@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>To Do List</title>
+        <script type="text/javascript">
+        function akle()
+        {
+            alert ("Hello Arun");
+        }
+        </script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        {% load static %}
+        <link rel="stylesheet" href="{% static "todo/style.css" %}" type="text/css">
+    </head>
+    <body>
+        <div class="container">
+        <form action="{% url 'add' %}", method="post" role = "form">
+            <h2>Hello! list your <span>TO-DO</span> tasks</h2>
+            {% csrf_token %}
+            {{ form.text }}
+            <button type="submit">Add</button><br>
+            <a href="{% url 'delall' %}"><button type="button" onclick="akle()">Delete All</button></a>
+            <a href="{% url 'delcomplete' %}"><button type="button">Delete Completed</button></a>
+            <ul>
+                {% for item in tasks %}
+                {% if item.complete %}
+                    <li class = "cross"><a href="#">{{ item.text }}</li></a>
+                {% else %}
+                    <li><a href="{% url 'complete' pk=item.id %}">{{ item.text }}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+          </form>
+      </div>
+    </body>
+</html>
